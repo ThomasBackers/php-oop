@@ -5,6 +5,11 @@ class Render {
   public static function displayRecipe($recipe) {
     return $recipe->getTitle().' by '.$recipe->getSource();
   }
+
+  public static function listRecipes($titles) {
+    asort($titles);
+    return implode(', <br>', $titles);
+  }
   
   public static function getClassMethods() {
     return implode('<br>', get_class_methods(__CLASS__));
